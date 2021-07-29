@@ -11,6 +11,11 @@ public class Account {
         this.amount = amount;
     }
 
+    public Account(BigDecimal amount) {
+
+        this.amount = amount;
+    }
+
     public int getId() {
         return id;
     }
