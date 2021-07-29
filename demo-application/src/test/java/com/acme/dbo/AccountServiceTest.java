@@ -22,7 +22,9 @@ public class AccountServiceTest {
     /**
      * see also {@link org.mockito.MockitoAnnotations#openMocks} instead of {@link org.mockito.junit.jupiter.MockitoExtension}
      */
+    //это просто мока
     @Mock private AccountRepository accountRepositoryStub;
+    // а это реальный объект, созданный на основе моки выше
     @InjectMocks private AccountService sut;
 
     @Test
@@ -33,4 +35,6 @@ public class AccountServiceTest {
         assertTrue(sut.findAll().contains(
                 new Account(2, new BigDecimal("2.22"))));
     }
+
+
 }
