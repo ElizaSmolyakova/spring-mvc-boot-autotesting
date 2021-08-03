@@ -67,7 +67,8 @@ public class AccountCrudIT {
 
     @Test
     public void shouldAskRepositoryWithParamsWhenCreate() throws AccountNotFoundException {
-       // verify(accountRepositoryStub).accountController.create( new Account(3, new BigDecimal("3.33");
+        accountController.create(new Account(3, new BigDecimal("3.33")));
+        verify(accountRepositoryStub).create( new Account(3, new BigDecimal("3.33")));
 
     }
 

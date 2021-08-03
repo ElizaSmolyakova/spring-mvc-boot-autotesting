@@ -1,6 +1,7 @@
 package com.acme.dbo.config;
 
 import com.acme.dbo.dao.AccountRepository;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
@@ -20,5 +21,10 @@ public class TestConfig {
     public AccountRepository accountRepositoryStub(@Value("${accounts.repo.init-capacity}") int initCapacity) {
         log.debug("Created accountRepositoryStub with initial capacity {}", initCapacity);
         return mock(AccountRepository.class);
+    }
+
+    @Bean
+    public ObjectMapper objectMapper() {
+        return new ObjectMapper();
     }
 }
